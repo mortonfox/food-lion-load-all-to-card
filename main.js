@@ -1,6 +1,10 @@
-// jshint esversion: 6
+// jshint esversion: 8
 
-function runSelect(event) {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function runSelect(event) {
   event.preventDefault();
 
   // Click on every "load to card" button.
@@ -12,6 +16,7 @@ function runSelect(event) {
   for (var btn of Array.from(load2crd).reverse()) {
     btn.click();
     clicked++;
+    await sleep(1000);
   }
   console.log(clicked + ' coupons clicked');
 }
