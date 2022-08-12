@@ -7,6 +7,12 @@ function sleep(ms) {
 async function runSelect(event) {
   event.preventDefault();
 
+  // Scroll to the bottom a few times to try to get all coupons to show up.
+  for (let i = 0; i < 5; ++i) {
+    window.scrollTo(0, document.body.scrollHeight);
+    await sleep(500);
+  }
+
   // Click on every "load to card" button.
   var load2crd = document.getElementsByClassName('fl-coupon-load');
   console.log(load2crd.length + ' coupons found');
@@ -14,9 +20,10 @@ async function runSelect(event) {
 
   // Iterate in reverse because clicking on a button mutates the coupon list.
   for (var btn of Array.from(load2crd).reverse()) {
+    btn.scrollIntoView();
     btn.click();
     clicked++;
-    await sleep(1000);
+    await sleep(500);
   }
   console.log(clicked + ' coupons clicked');
 }
