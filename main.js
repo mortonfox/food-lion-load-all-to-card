@@ -10,7 +10,7 @@ async function runSelect(event) {
   // Scroll to the bottom a few times to try to get all coupons to show up.
   for (let i = 0; i < 5; ++i) {
     window.scrollTo(0, document.body.scrollHeight);
-    await sleep(500);
+    await sleep(1000);
   }
 
   // Click on every "load to card" button.
@@ -23,7 +23,7 @@ async function runSelect(event) {
     btn.scrollIntoView();
     btn.click();
     clicked++;
-    await sleep(500);
+    await sleep(1000);
   }
   console.log(clicked + ' coupons clicked');
 }
