@@ -12,7 +12,7 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.foodlion.com/coupons/"
+                "*://*.foodlion.com/savings/coupons/browse"
             ],
             "js": ["main.js"]
         }
