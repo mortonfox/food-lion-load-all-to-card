@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Food Lion - Load All To Card",
-    "version": "0.0.3",
+    "version": "0.0.4",
 
     "description": "Load all MVP coupons to card",
 
@@ -12,7 +12,7 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.foodlion.com/savings/coupons/browse"
+                "*://*.foodlion.com/*"
             ],
             "js": ["main.js"]
         }

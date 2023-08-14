@@ -55,7 +55,11 @@ function insertButton(btn) {
   let waitForSiteTimer = setInterval(waitForSite, 100);
 }
 
-function init() {
+function run() {
+  // Check if we are on the coupons page.
+  let loc = window.location.href;
+  if (!loc.includes('/savings/coupons/browse')) return;
+
   // Make a new button for our action.
   let newbutton = document.createElement('button');
   newbutton.name = 'load_all_to_card';
@@ -82,6 +86,20 @@ function init() {
   insertButton(newbutton);
 }
 
-init();
+// Run the button inserter the first time and also whenever the URL changes.
+// Some links in the new Food Lion web interface do not reload the page.
+const observeUrlChange = () => {
+  let oldHref = null;
+  const body = document.querySelector('body');
+  const observer = new MutationObserver(mutations => {
+    if (oldHref !== document.location.href) {
+      oldHref = document.location.href;
+      run();
+    }
+  });
+  observer.observe(body, { childList: true, subtree: true });
+};
+
+window.onload = observeUrlChange;
 
 // -- The End --
