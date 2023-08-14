@@ -83,7 +83,8 @@ function run() {
   newbutton.appendChild(document.createTextNode('Load All To Card'));
   newbutton.addEventListener('click', runSelect);
 
-  insertButton(newbutton);
+  // Don't add button if already there.
+  if (!document.getElementById('load_all_to_card')) insertButton(newbutton);
 }
 
 // Run the button inserter the first time and also whenever the URL changes.
