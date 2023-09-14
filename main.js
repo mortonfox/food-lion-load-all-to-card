@@ -58,7 +58,12 @@ function insertButton(btn) {
 function run() {
   // Check if we are on the coupons page.
   let loc = window.location.href;
-  if (!loc.includes('/savings/coupons/browse')) return;
+  if (!loc.includes('/savings/coupons/browse')) {
+    // Remove button if it is on a non-coupon page.
+    let btn = document.getElementById('load_all_to_card');
+    if (btn) btn.remove();
+    return;
+  }
 
   // Make a new button for our action.
   let newbutton = document.createElement('button');
