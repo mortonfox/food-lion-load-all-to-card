@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a Chrome extension that adds a "Load All To Card" button to the Food Lion [MVP Coupons Center](https://www.foodlion.com/coupons/). The Javascript action on this button will click on all the coupons in one shot, adding all of them to the card.
+This is a Chrome extension that adds a "Load All To Card" button to the Food Lion [MVP Coupons Center](https://foodlion.com/savings/coupons/browse). The Javascript action on this button will click on all the coupons in one shot, adding all of them to the card.
 
 ## Installation
 
