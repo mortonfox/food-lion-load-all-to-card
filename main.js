@@ -18,7 +18,8 @@ async function runSelect(event) {
   event.preventDefault();
 
   // Click on "Show More" button until it no longer shows up.
-  for (;;) {
+  // Limit the number of times we click on that button.
+  for (let i = 0; i < 10; ++i) {
     let btns = findButtons('Show More');
     if (!btns.length) break;
     let btn = btns[0];
