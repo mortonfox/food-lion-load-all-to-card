@@ -23,7 +23,7 @@ async function runSelect(event) {
     let btns = findButtons('Show More');
     if (!btns.length) break;
     let btn = btns[0];
-    btn.scrollIntoView();
+    btn.scrollIntoView({ block: 'center' });
     btn.click();
     await sleep(1000);
   }
@@ -34,7 +34,7 @@ async function runSelect(event) {
 
   let clicked = 0;
   for (let btn of Array.from(btns).reverse()) {
-    btn.scrollIntoView();
+    btn.scrollIntoView({ block: 'center' });
     btn.click();
     clicked++;
     await sleep(1000);
